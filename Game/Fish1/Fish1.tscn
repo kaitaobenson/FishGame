@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkhxc2ifjva8v"]
+
+[ext_resource type="Script" path="res://Fish1/Fish1.gd" id="1_vdqc5"]
+[ext_resource type="Texture2D" uid="uid://dwtwnoe4vspmr" path="res://icon.svg" id="2_h7s46"]
+[ext_resource type="PackedScene" uid="uid://bpvp2tekpalqm" path="res://HealthComponent.tscn" id="2_k8882"]
+[ext_resource type="Script" path="res://UsefulScripts/JointRope.gd" id="3_6uoyu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x4i4t"]
+radius = 51.0098
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rm0wd"]
+
+[node name="Fish1" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_vdqc5")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_k8882")]
+
+[node name="FishBody" type="Sprite2D" parent="."]
+modulate = Color(0.827451, 0.0156863, 0.827451, 1)
+position = Vector2(3, 3)
+scale = Vector2(0.953125, 0.953125)
+texture = ExtResource("2_h7s46")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 4)
+shape = SubResource("CircleShape2D_x4i4t")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." node_paths=PackedStringArray("rope_anchor")]
+position = Vector2(72, -14)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("3_6uoyu")
+length = 100
+rope_anchor = NodePath("../StaticBody2D")
+extra_sprite_size = 0.01
+segment_sprite = "res://Circle copy.png"
+sprite_size = 1000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-70, 71)
+shape = SubResource("RectangleShape2D_rm0wd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." node_paths=PackedStringArray("rope_anchor")]
+position = Vector2(2, -68)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("3_6uoyu")
+length = 100
+rope_anchor = NodePath(".")
+extra_sprite_size = 0.01
+segment_sprite = "res://Circle copy.png"
+sprite_size = 1000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-70, 71)
+shape = SubResource("RectangleShape2D_rm0wd")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." node_paths=PackedStringArray("rope_anchor")]
+position = Vector2(133, -69)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("3_6uoyu")
+length = 100
+rope_anchor = NodePath("../StaticBody2D")
+extra_sprite_size = 0.01
+segment_sprite = "res://Circle copy.png"
+sprite_size = 1000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-70, 71)
+shape = SubResource("RectangleShape2D_rm0wd")
