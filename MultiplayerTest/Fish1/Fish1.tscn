@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://UsefulScripts/JointRope.gd" id="3_6uoyu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x4i4t"]
-radius = 51.0098
+radius = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rm0wd"]
 
@@ -23,10 +23,10 @@ scale = Vector2(0.953125, 0.953125)
 texture = ExtResource("2_h7s46")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
+avoidance_enabled = true
+radius = 0.01
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 4)
 shape = SubResource("CircleShape2D_x4i4t")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." node_paths=PackedStringArray("rope_anchor")]
