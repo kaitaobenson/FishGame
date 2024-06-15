@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dkhxc2ifjva8v"]
 
 [ext_resource type="Script" path="res://Fish1/Fish1.gd" id="1_vdqc5"]
-[ext_resource type="Texture2D" uid="uid://dwtwnoe4vspmr" path="res://icon.svg" id="2_h7s46"]
+[ext_resource type="Texture2D" uid="uid://dwtwnoe4vspmr" path="res://Sprites/icon.svg" id="2_h7s46"]
 [ext_resource type="PackedScene" uid="uid://bpvp2tekpalqm" path="res://HealthComponent.tscn" id="2_k8882"]
 [ext_resource type="Script" path="res://UsefulScripts/JointRope.gd" id="3_6uoyu"]
 

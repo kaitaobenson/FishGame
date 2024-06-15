@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://635o56f026qm"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_xc0xi"]
-[ext_resource type="Texture2D" uid="uid://cmg4pobet6mak" path="res://Circle.png" id="2_53rt1"]
+[ext_resource type="Texture2D" uid="uid://cmg4pobet6mak" path="res://Sprites/Circle.png" id="2_53rt1"]
 [ext_resource type="Script" path="res://Player/PlayerObjectDetection.gd" id="3_gjtm1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wane6"]

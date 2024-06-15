@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://blqwrp7v13ftc"]
 
-[ext_resource type="Texture2D" uid="uid://db5w15w1kdiq6" path="res://Gun.png" id="1_bg6m3"]
+[ext_resource type="Texture2D" uid="uid://db5w15w1kdiq6" path="res://Sprites/Gun.png" id="1_bg6m3"]
 
 [node name="ApsRifle" type="Node2D"]
 

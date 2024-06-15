@@ -30,7 +30,7 @@ var bullet = load("res://Bullet.tscn")
 @onready var ray_right = $"GroundRaycasts/Right"
 
 @onready var flashlight = $"Flashlight"
-@onready var collision = $"Collision"
+@onready var collision = $"CollisionShape2D"
 
 func _init():
 	Global.player = self
