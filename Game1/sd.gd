@@ -6,16 +6,12 @@ var callback_parsing : Callable
 var callback_baking : Callable
 var region_rid: RID
 
-@onready var tilemap: TileMap = $"TileMap"
-
 @onready var top = Global.camera.limit_top
 @onready var bottom = Global.camera.limit_bottom
 @onready var left = Global.camera.limit_left
 @onready var right = Global.camera.limit_right
 
 var nav_region
-
-var tilemap_points: Array
 
 func _ready() -> void:
 	nav_region = $"NavigationRegion2D" 
@@ -38,7 +34,6 @@ func _ready() -> void:
 
 func parse_source_geometry() -> void:
 	source_geometry.clear()
-	#tilemap.global_position = Vector2(0,0)
 	self.global_position = Vector2(0,0)
 	nav_region.global_position = Vector2(0,0)
 	
