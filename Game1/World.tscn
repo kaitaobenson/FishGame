@@ -138,20 +138,24 @@ script = ExtResource("6_x5jq5")
 [node name="Up" type="CollisionShape2D" parent="Camera/OutOfBounds"]
 position = Vector2(705, -148)
 shape = SubResource("RectangleShape2D_f7did")
+disabled = true
 
 [node name="Down" type="CollisionShape2D" parent="Camera/OutOfBounds"]
 position = Vector2(655, 1004)
 shape = SubResource("RectangleShape2D_f7did")
+disabled = true
 
 [node name="Left" type="CollisionShape2D" parent="Camera/OutOfBounds"]
 position = Vector2(-763, 269)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_f7did")
+disabled = true
 
 [node name="Right" type="CollisionShape2D" parent="Camera/OutOfBounds"]
 position = Vector2(1946, 489)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_f7did")
+disabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_xv4x4")]
 position = Vector2(197, 831)

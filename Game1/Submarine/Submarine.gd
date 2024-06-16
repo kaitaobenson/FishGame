@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 const OBJECT_NAME: String = "Submarine"
-const LEFT_RIGHT_SPEED: int = 600
-const UP_DOWN_SPEED: int = 300
+const LEFT_RIGHT_ACCEL: int = 10
+const UP_DOWN_ACCEL: int = 8
 
 #Collision shape must be circle!
 @onready var oxygen_radius = $"OxygenArea/CollisionShape2D".shape.radius
@@ -20,14 +20,14 @@ func _process(delta):
 		Global.player.position = position
 		
 		if Input.is_action_pressed("Left"):
-			velocity.x = -LEFT_RIGHT_SPEED
+			velocity.x -= LEFT_RIGHT_ACCEL
 		if Input.is_action_pressed("Right"):
-			velocity.x = LEFT_RIGHT_SPEED
+			velocity.x += LEFT_RIGHT_ACCEL
 		
 		if Input.is_action_pressed("Up"):
-			velocity.y = -UP_DOWN_SPEED
+			velocity.y -= UP_DOWN_ACCEL
 		if Input.is_action_pressed("Down"):
-			velocity.y = UP_DOWN_SPEED
+			velocity.y += UP_DOWN_ACCEL
 		
 		do_gravity()
 		move_and_slide()
@@ -50,8 +50,8 @@ func _process(delta):
 
 
 func do_gravity():
-	velocity.x = lerp(velocity.x, 0.0, 0.1)
-	velocity.y = lerp(velocity.y, 0.0, 0.1)
+	velocity.x = lerp(velocity.x, 0.0, 0.05)
+	velocity.y = lerp(velocity.y, 0.0, 0.05)
 
 
 func interact():
