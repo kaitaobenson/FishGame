@@ -39,31 +39,43 @@ target_position = Vector2(-18, 0)
 target_position = Vector2(18, 0)
 
 [node name="Flashlight" type="PointLight2D" parent="."]
-visible = false
 modulate = Color(7.647, 9.412, 6.176, 1)
-rotation = -0.237493
+position = Vector2(0, -25)
 energy = 11.41
 shadow_enabled = true
 texture = ExtResource("2_53rt1")
 
+[node name="Area2D" type="Area2D" parent="Flashlight"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Flashlight/Area2D"]
+polygon = PackedVector2Array(-11.0075, 19.9709, -11, -487, 489, 19)
+metadata/_edit_lock_ = true
+
 [node name="ObjectDetection" type="Node2D" parent="."]
 script = ExtResource("3_gjtm1")
+metadata/_edit_lock_ = true
 
 [node name="Hurtbox" type="Area2D" parent="ObjectDetection"]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectDetection/Hurtbox"]
 position = Vector2(0, -24.5)
 shape = SubResource("RectangleShape2D_wane6")
 debug_color = Color(0.27451, 0.486275, 0.262745, 0.419608)
+metadata/_edit_lock_ = true
 
 [node name="InteractArea" type="Area2D" parent="ObjectDetection"]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectDetection/InteractArea"]
 position = Vector2(0, -24)
 shape = SubResource("CircleShape2D_42a27")
 debug_color = Color(0.34902, 0.882353, 1, 0.419608)
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -25)
 shape = SubResource("CapsuleShape2D_y45x4")
 debug_color = Color(0, 0, 0, 0.419608)
+metadata/_edit_lock_ = true
